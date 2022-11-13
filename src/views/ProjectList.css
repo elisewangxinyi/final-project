@@ -1,0 +1,16 @@
+/****************** STYLING PROJECT LIST ****************/
+body {
+    background-color: #B00E2F;
+}
+
+#projList {
+    width: 83%;
+    margin-top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 140px;
+}
