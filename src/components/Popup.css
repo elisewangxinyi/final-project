@@ -1,0 +1,30 @@
+/****************STYLING POPUP COMPONENT***************/
+.popup {
+    display: block;
+    width: 50%;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-style: solid;
+    border-color: gray;
+    border-width: 2px;
+    background-color: white;
+    padding: 8px;
+  
+    text-align: left;
+    font-size: 16px;
+}
+
+.description {
+    display: flex;
+}
+
+.description button {
+    width: 40px;
+    height: 40px;
+
+    margin-left: 50px;
+}

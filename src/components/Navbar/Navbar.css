@@ -1,6 +1,9 @@
 /****************** STYLING NAVBAR ****************/
 
 nav {
+    position: fixed;
+    top: 0px;
+    width: 100%;
     height: 130px;
     background-color: #c53652;
 

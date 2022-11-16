@@ -1,0 +1,33 @@
+/****************** STYLING TIMELINE ****************/
+#timeline {
+    margin-top: 130px;
+    color: #FEE5CA;
+    position: relative;
+}
+
+.start h1 {
+    display: block;
+    margin-left: auto;
+    margin-right: 50px;
+    margin-top: 20px;
+
+    font-size: 100px;
+    width: 1200px;
+    text-align: right;
+}
+
+#intro-description {
+    display: block;
+    width: 800px;
+    height: 300px;
+
+    font-size: 30px;
+
+    margin-left: 350px;
+}
+
+#scroll-indicator {
+    position: fixed;
+    bottom: 5px;
+    left: 40px;
+}

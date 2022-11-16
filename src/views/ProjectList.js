@@ -7,7 +7,7 @@ import "./ProjectList.css";
 
 function ProjectList () {
     return(
-        <div>
+        <div id='projects'>
             <Navbar />
             <div id='projList'>
                 <CaseStudy
@@ -34,8 +34,7 @@ function ProjectList () {
                 projName = "NAME TO BE REPLACED"
                 projYear = "YEAR"
                 />
-            </div>
-            
+            </div>    
         </div>
     )
 }
