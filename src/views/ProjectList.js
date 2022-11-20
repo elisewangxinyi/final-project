@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import CaseStudy from '../components/CaseStudy';
 import Navbar from '../components/Navbar';
+import Popup from '../components/Popup';
 
 import "./ProjectList.css";
 
 
 function ProjectList () {
+    const [popupSeen, setPopup] = useState(false);
     return(
         <div id='projects'>
             <Navbar />
@@ -15,6 +17,7 @@ function ProjectList () {
                 img = {process.env.PUBLIC_URL + "/assets/form-z.png"}
                 projName = "The Walter Segal Model"
                 projYear = "1982"
+                openPopup = {setPopup}
                 />
                 <CaseStudy
                 softwareName = "SOILD WORK"

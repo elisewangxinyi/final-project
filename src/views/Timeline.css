@@ -1,6 +1,6 @@
 /****************** STYLING TIMELINE ****************/
 #timeline {
-    margin-top: 130px;
+    margin-top: 120px;
     color: #FEE5CA;
     position: relative;
 }
@@ -30,4 +30,6 @@
     position: fixed;
     bottom: 5px;
     left: 40px;
+
+    z-index: 100;
 }
