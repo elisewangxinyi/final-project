@@ -22,7 +22,7 @@ function Homepage () {
         <div>
             <div id='title'>
                 <h1>THE ARCHITECTURE <br/>MACHINE</h1>
-                <Button 
+                <Button id='testtest'
                 label='ABOUT' 
                 size='medium'
                 hoverIndicator={{color: '#B00E2F'}}

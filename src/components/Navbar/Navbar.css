@@ -1,14 +1,10 @@
 /****************** STYLING NAVBAR ****************/
-
 .nav {
     position: fixed;
     top: 0px;
     width: 100%;
-    height: 100px;
-    background-color: #c53652;
-    /* z-index: 100; */
+    height: 10%;
 
-  
     justify-content: space-between;
     align-items: center;
 
@@ -17,17 +13,8 @@
 
 }
 
-
-nav button {
-    width: fit-content;
-
-    padding: 5px 30px;
-    margin-left: 50px;
-
-    background-color: #B00E2F;
-    color: #FEE5CA;
-    border-color: #FEE5CA;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 20px;
+.btn-nav:hover {
+    background-color: #FEE5CA;
+    color: #B00E2F;
+    cursor: none;
 }

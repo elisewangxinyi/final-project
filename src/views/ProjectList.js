@@ -5,13 +5,14 @@ import Popup from '../components/Popup';
 
 import "./ProjectList.css";
 
-
+//TODO:
+//projects ease in like huarui's
 function ProjectList () {
     const [popupSeen, setPopup] = useState(false);
     return(
         <div id='projects'>
             <Navbar />
-            <div id='projList'>
+            <div className='projList'>
                 <CaseStudy
                 softwareName = "FORM Z"
                 img = {process.env.PUBLIC_URL + "/assets/form-z.png"}

@@ -9,6 +9,8 @@
     width: 90%;
     margin: 10px auto 20px auto;
     text-align: center;
+
+    text-shadow: 0 0 20px #1a4774;
 }
 
 
@@ -38,4 +40,8 @@
 
 #get-started h2 {
     font-weight: 300;
+}
+
+#testtest {
+    box-shadow: 0 0 20px #bcbec0;
 }

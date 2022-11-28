@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Button, Carousel, Grommet } from 'grommet';
+import { Box, Button, Carousel, Grommet, Heading, Paragraph } from 'grommet';
 import { Close } from 'grommet-icons';
 import './Popup.css';
 
@@ -15,8 +15,7 @@ const popupTheme = {
           icon: '#B00E2F'
         },
         font: {
-          family: 'Roboto',
-          size: '20px'
+          family: 'Inter',
         },
       }
 }
@@ -25,15 +24,20 @@ class Popup extends Component {
     render() {
         return (
             <Grommet theme={popupTheme}>
-                <Box background='background' width='70vw' height='85vh' pad='35px'>
-                    <Box direction ='row' justify='between' align='start'className='title'>
-                        <h1>{this.props.title}</h1>
+                <Box background='background' width='70vw' height='85vh' pad='medium'>
+                    <Box direction ='row' justify='between' align='start'>
+                        <Heading level='1' size='large' margin='0px'>
+                            {this.props.title}
+                        </Heading>
                         <Button icon={<Close size='large'/>} 
                                 onClick={() => this.props.closePopup(false)}/>
                     </Box>
-                    <h2 className='subtitle'>{this.props.subtitle}</h2>
+                    <Heading level='2' size='large' margin={{vertical: '10px'}} weight='normal'>
+                        {this.props.subtitle}
+                    </Heading>
                     <div className='line'></div>
-                    <Box direction='row' justify='between' className='info'>
+                    <Box direction='row' justify='between' 
+                         margin={{bottom: 'small'}} className='info'>
                         <p>{this.props.year}</p>
                         <p className='description'>{this.props.description}</p>
                     </Box>
