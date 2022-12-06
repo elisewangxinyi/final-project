@@ -6,6 +6,21 @@ import Popup from "../Popup";
 
 import "./Navbar.css";
 
+//Exhibiiton description and images
+const exhibitInfo = `Project "Architecture Machine" is based on the exhibition
+                    "The Architecture Machine: The Role of Computers in Architecture"
+                    at the Architekturmuseum der TUM in 2020. The exhibition took 
+                    a comprehensive look at digital development in architecture, 
+                    from its beginnings in the 1950s and 1960s to the present day.`
+
+const images = [
+    process.env.PUBLIC_URL + "/assets/exhibition1.jpg",
+    process.env.PUBLIC_URL + "/assets/exhibition2.jpg",
+    process.env.PUBLIC_URL + "/assets/exhibition3.jpg",
+    process.env.PUBLIC_URL + "/assets/exhibition4.jpg",
+]
+
+//Grommet theme for Nav bar
 const navTheme = {
   global: {
     colors : {
@@ -22,7 +37,6 @@ const navTheme = {
   }
 };
 
-  
 const Navbar = () => {
   const [popupSeen, setPopup] = useState(false);
   return (
@@ -47,8 +61,10 @@ const Navbar = () => {
           <Popup
           title = "THE ARCHITECTURE MACHINE"
           subtitle = "THE ROLE OF COMPUTERS IN ARCHITECTURE"
-          img = {process.env.PUBLIC_URL + "/assets/exhibition1.jpg"}
-          alt = "image of the Architecture Machine Exhibition"
+          images = {images}
+          alt = "images of the Architecture Machine Exhibition"
+          year = '2003'
+          description = {exhibitInfo}
           closePopup = {setPopup}/>
         </Layer>
         }

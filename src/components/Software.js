@@ -13,10 +13,6 @@ class Software extends Component {
                  pad={{horizontal: 'medium'}}
                  align='end'>
                 
-                {/* <div onMouseEnter={this.props.mouseEnter} 
-                    onMouseLeave={this.props.mouseLeave}>
-
-                </div> */}
                 <img className='svgbg' src={this.props.svg}/>
                 <img 
                     className='software-img' 

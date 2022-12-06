@@ -16,6 +16,8 @@
 
 .img-gallery img {
     width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-close {

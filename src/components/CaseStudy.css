@@ -1,25 +1,10 @@
 .caseStudy {
-    display: block;
-    width: 560px;
-    /* background-color: rgb(21, 77, 77); */
-
+    flex-basis: 40%;
     text-align: center;
 }
 
-.caseStudy h3 {
-    margin: 5px;
-    font-size: 50px;
-    color: #fee5ca;
-}
-
 .caseStudy img {
-    width: 560px;
-    height: 400px;
-}
-
-.caseStudy p {
-    margin: 5px;
-    font-size: 30px;
-    color: #fee5ca;
+    min-width: 450px;
+    height: 290px;
 }
 

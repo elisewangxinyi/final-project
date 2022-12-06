@@ -1,17 +1,35 @@
 /****************** STYLING TIMELINE ****************/
 .timeline {
-    cursor: none;
-    
+    cursor: none;  
 }
 .cursor {
-    height: 24px;
-    width: 24px;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
+
+    display: flex;
+    flex-flow: row;
+    align-content: center;
+    justify-content: center;
+
+    text-align: center;
+    font-size: 24px;
+
     pointer-events: none;
+
+    box-shadow: 0 0 10px #FFBCBC;
+}
+
+.cursorText {
+    flex: auto;
+    font-size: inherit;
+    font-weight: 500;
+    pointer-events: none;
+    margin: auto;
 }
 
 .start {
