@@ -40,6 +40,14 @@
     margin-top: 100vh;
 }
 
+.spin-timeline {
+    position: fixed;
+    left: -20%;
+    top: 10%;
+    width: 40%;
+    z-index: 200;
+}
+
 #scroll-indicator {
     position: fixed;
     bottom: 5px;

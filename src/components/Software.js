@@ -1,6 +1,5 @@
 import { Box } from 'grommet';
 import React, { Component } from 'react';
-import { Zoom } from 'react-awesome-reveal';
 import { Parallax } from 'react-scroll-parallax';
 
 
@@ -13,7 +12,9 @@ class Software extends Component {
                  pad={{horizontal: 'medium'}}
                  align='end'>
                 
-                <img className='svgbg' src={this.props.svg}/>
+                <img className='svgbg' 
+                     src={this.props.svg}
+                     alt ='an svg background with orange undulating lines'/>
                 <img 
                     className='software-img' 
                     src={this.props.img}

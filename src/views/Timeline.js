@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 import {Box, Grommet, Heading } from 'grommet';
 import { config, useSpring, animated } from 'react-spring';
 import { Fade } from "react-awesome-reveal";
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 import Navbar from '../components/Navbar';
 import Software from '../components/Software';
@@ -207,6 +207,10 @@ function Timeline () {
         config: config.gentle,
         onRest: () => set(!flip),
     })
+
+    // Spinning Timeline wheel
+    const { scrollYProgress } = useScroll();
+    const angle = useTransform(scrollYProgress, [0,1], [0, 360])
     
     return(
         <Grommet theme={timelineTheme} className='timeline'>
@@ -219,7 +223,8 @@ function Timeline () {
 
             <Navbar />
             
-            <Box background='beige' margin={{top: '10vh'}}>      
+            <Box background='beige' margin={{top: '10vh'}}>    
+                 
                 <Box pad={{horizontal:'large'}} 
                      height='90vh' 
                      direction='column'
@@ -245,6 +250,7 @@ function Timeline () {
                             design or even think?
                         </Heading> 
                     </Fade>
+                    
                 </Box>
 
                 <Box className='timeline-software'>
@@ -263,6 +269,14 @@ function Timeline () {
                     })}
                 </Box>
 
+                <motion.div
+                    style={{rotate: angle}}
+                    className="spin-timeline">
+                    <img 
+                        src={process.env.PUBLIC_URL + "/assets/timeline-wheel2.svg"}
+                        alt = 'a timeline of all the software in a spinning wheel format'/>
+                </motion.div> 
+                
                 <animated.h1 style={props}>
                     <p id='scroll-indicator'>KEEP SCROLLING</p>
                 </animated.h1>
