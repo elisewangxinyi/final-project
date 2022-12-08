@@ -1,8 +1,11 @@
 /****************** STYLING HOME PAGE ****************/
+body::-webkit-scrollbar{
+    display: none;
+}
+
 .home {
     cursor: none;
 }
-
 
 @media (prefers-reduced-motion: no-preference) {
     .btn-about {

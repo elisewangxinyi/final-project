@@ -304,9 +304,9 @@ function Timeline () {
                         alt = 'a timeline of all the software in a spinning wheel format'/>
                 </motion.div> 
                 
-                <animated.h1 style={props}>
+                <animated.div style={props}>
                     <p id='scroll-indicator'>KEEP SCROLLING</p>
-                </animated.h1>
+                </animated.div>
 
                 {popupSeen && 
                     <Layer className='user-interface' 
