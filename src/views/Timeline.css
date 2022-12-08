@@ -40,12 +40,17 @@
     margin-top: 100vh;
 }
 
+.user-interface {
+    width: 70%;
+    cursor: url("../../public/assets/bleed-svgrepo-com.svg") 16 16, pointer
+}
+
 .spin-timeline {
     position: fixed;
     left: -20%;
     top: 10%;
     width: 40%;
-    z-index: 200;
+    z-index: 10;
 }
 
 #scroll-indicator {
@@ -56,5 +61,5 @@
     font-size: medium;
     font-weight: 200;
 
-    z-index: 100;
+    z-index: 5;
 }

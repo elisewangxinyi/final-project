@@ -168,38 +168,38 @@ const projectsTheme = {
 }
 
 function ProjectList () {
-        //Custom Cursor
-        const [mousePosition, setMousePosition] = useState({
-            x: 0,
-            y: 0
-          });
-        
-        useEffect(() => {
-        const mouseMove = (event) => {
-            setMousePosition({
-            x: event.clientX,
-            y: event.clientY
-            })
-        }
-        window.addEventListener("mousemove", mouseMove);
+    //Custom Cursor
+    const [mousePosition, setMousePosition] = useState({
+        x: 0,
+        y: 0
+        });
     
-        return () => {
-            window.removeEventListener("mousemove", mouseMove)
-        }
+    useEffect(() => {
+    const mouseMove = (event) => {
+        setMousePosition({
+        x: event.clientX,
+        y: event.clientY
         })
-        
-        const variants = {
-            default: {
-                x: mousePosition.x-12,
-                y: mousePosition.y-12,
-                backgroundColor: "#FFBCBC",
-                transition: {
-                    type: "spring",
-                    mass: 0.5
-                }
-                
+    }
+    window.addEventListener("mousemove", mouseMove);
+
+    return () => {
+        window.removeEventListener("mousemove", mouseMove)
+    }
+    })
+    
+    const variants = {
+        default: {
+            x: mousePosition.x-12,
+            y: mousePosition.y-12,
+            backgroundColor: "#FFBCBC",
+            transition: {
+                type: "spring",
+                mass: 0.5
             }
+            
         }
+    }
     const [popupSeen, setPopup] = useState(false);
     const [selectedProj, setProj] = useState(null);
 

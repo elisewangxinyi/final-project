@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import {Box, Grommet, Heading } from 'grommet';
+import {Box, Grommet, Heading, Layer } from 'grommet';
 import { config, useSpring, animated } from 'react-spring';
 import { Fade } from "react-awesome-reveal";
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -10,7 +10,6 @@ import Software from '../components/Software';
 import "./Timeline.css";
 
 //TODO: 
-//timeline wheel
 //parallax from framer motion
 //click on software to open a pop up?
 
@@ -62,12 +61,13 @@ const ghInfo = `Grasshopper is a visual programming language and environment tha
 
 // Software class
 class Tool {
-    constructor(name, bgSvg, image, altTxt, description){
+    constructor(name, bgSvg, image, altTxt, description, ui){
         this.name = name;
         this.bgSvg = bgSvg;
         this.image = image;
         this.altTxt = altTxt;
-        this.description = description
+        this.description = description;
+        this.ui = ui;
     }
 }
 
@@ -77,32 +77,38 @@ const softwares = [
             process.env.PUBLIC_URL + "/assets/uuundulate.svg",
             process.env.PUBLIC_URL + "/assets/catia.png",
             "a race car modeled in CATIA",
-            catiaInfo),
+            catiaInfo,
+            process.env.PUBLIC_URL + "/assets/catiaUI.jpg"),
     new Tool("AUTOCAD",
             process.env.PUBLIC_URL + "/assets/uuundulate1.svg",
             process.env.PUBLIC_URL + "/assets/autocad.png",
             "a 2D floor plan drawn in autoCAD",
-            autoCADInfo),
+            autoCADInfo,
+            process.env.PUBLIC_URL + "/assets/autocadUI.png"),
     new Tool("FORM Z",
             process.env.PUBLIC_URL + "/assets/uuundulate3.svg",
             process.env.PUBLIC_URL + "/assets/form-z.png",
             "a 2D floor plan drawn in autoCAD",
-            formzInfo),
+            formzInfo,
+            process.env.PUBLIC_URL + "/assets/formZUI.png"),
     new Tool("RHINOCEROS",
             process.env.PUBLIC_URL + "/assets/uuundulate2.svg",
             process.env.PUBLIC_URL + "/assets/rhino.png",
             "a NURB-based rhinoceros modeled in the software Rhino",
-            rhinoInfo),
+            rhinoInfo,
+            process.env.PUBLIC_URL + "/assets/rhinoUI.jpg"),
     new Tool("REVIT",
             process.env.PUBLIC_URL + "/assets/uuundulate.svg",
             process.env.PUBLIC_URL + "/assets/revit.png",
             "a model of a mixed-use, four-floor building in Revit",
-            revitInfo),
+            revitInfo,
+            process.env.PUBLIC_URL + "/assets/revitUI.jpg"),
     new Tool("GRASSHOPPER",
             process.env.PUBLIC_URL + "/assets/uuundulate4.svg",
             process.env.PUBLIC_URL + "/assets/gh.png",
             "a 2D floor plan drawn in autoCAD",
-            ghInfo)
+            ghInfo,
+            process.env.PUBLIC_URL + "/assets/grasshopperUI.jpg")
 ];
 
 
@@ -142,6 +148,7 @@ const timelineTheme = {
 }
 
 function Timeline () {
+    //Custom Cursor
     const [mousePosition, setMousePosition] = useState({
         x: 0,
         y: 0
@@ -181,8 +188,12 @@ function Timeline () {
             x: mousePosition.x-75,
             y: mousePosition.y-75,
             backgroundColor: "#FEE5CA",
-            color: "#B00E2F"
-            
+            color: "#B00E2F" 
+        },
+        userInterface: {
+            opacity: 0,
+            x: mousePosition.x-12,
+            y: mousePosition.y-12,
         }
     }
 
@@ -192,6 +203,14 @@ function Timeline () {
     };
     const textLeave = () => {
         setCursorText("")
+        setCursorVariant("default")
+    }
+
+    const textEnterUI = () => {
+        setCursorVariant("userInterface")
+    }
+
+    const textLeaveUI = () => {
         setCursorVariant("default")
     }
 
@@ -212,6 +231,15 @@ function Timeline () {
     const { scrollYProgress } = useScroll();
     const angle = useTransform(scrollYProgress, [0,1], [0, 360])
     
+
+    //Pop up 
+    const [popupSeen, setPopup] = useState(false);
+    const [selectedTool, setTool] = useState(null);
+    const openPopupOfSelectedTool = (index) => {
+        setTool(softwares[index]);
+        setPopup(true);
+    };
+
     return(
         <Grommet theme={timelineTheme} className='timeline'>
             <motion.div 
@@ -222,9 +250,7 @@ function Timeline () {
             </motion.div>
 
             <Navbar />
-            
-            <Box background='beige' margin={{top: '10vh'}}>    
-                 
+            <Box background='beige' margin={{top: '10vh'}}>
                 <Box pad={{horizontal:'large'}} 
                      height='90vh' 
                      direction='column'
@@ -265,6 +291,7 @@ function Timeline () {
                                     description = {software.description}
                                     mouseEnter = {textEnter}
                                     mouseLeave = {textLeave}
+                                    openPopup = {openPopupOfSelectedTool}
                                     />
                     })}
                 </Box>
@@ -280,6 +307,15 @@ function Timeline () {
                 <animated.h1 style={props}>
                     <p id='scroll-indicator'>KEEP SCROLLING</p>
                 </animated.h1>
+
+                {popupSeen && 
+                    <Layer className='user-interface' 
+                           onClickOutside={() => setPopup(false)}
+                           onMouseEnter={textEnterUI}
+                           onMouseLeave={textLeaveUI}>
+                        <img src={selectedTool.ui} alt='the user interface of software'/>
+                    </Layer>
+                }
             </Box>
         </Grommet>
         

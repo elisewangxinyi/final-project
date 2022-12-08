@@ -1,5 +1,5 @@
 /****************** STYLING HOME PAGE ****************/
-*{
+.home {
     cursor: none;
 }
 
@@ -11,6 +11,8 @@
       position: absolute;
       top: 35%;
       right: 15%;
+      transition: all ease 0.7s;
+
     }
 }
 
@@ -22,9 +24,11 @@
 #btn-go {
     color: #b00e2f;
     width: 200px;
+    transition: all ease 0.7s;
 }
 
-#btn-go:hover
+#btn-go:hover,
+#btn-go:focus
  {
     box-shadow: inset 10em 0 0 0 #b00e2f;
     color: #fee5ca;

@@ -84,7 +84,7 @@ function Homepage () {
     const [popupSeen, setPopup] = useState(false);
     
     return(
-        <Grommet theme={homeTheme} >
+        <Grommet theme={homeTheme} className='home'>
             <motion.div 
                 className='cursor'
                 variants={variants}
