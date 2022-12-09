@@ -101,8 +101,7 @@ function Homepage () {
                         width='100%'
                         margin={{bottom: '15px'}}
                         animation=
-                        { 
-                        {type: 'slideUp', delay: 300, duration: 500, size: 'large'}}
+                        {{type: 'slideUp', delay: 300, duration: 500, size: 'large'}}
                         >
                         <Heading level='1'
                                  textAlign='center'

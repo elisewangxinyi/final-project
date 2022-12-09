@@ -1,7 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import {Box, Grommet, Heading, Layer } from 'grommet';
 import { config, useSpring, animated } from 'react-spring';
-import { Fade } from "react-awesome-reveal";
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 import Navbar from '../components/Navbar';
@@ -9,9 +8,6 @@ import Software from '../components/Software';
 
 import "./Timeline.css";
 
-//TODO: 
-//parallax from framer motion
-//click on software to open a pop up?
 
 
 //Text info for each software:
@@ -128,10 +124,17 @@ const timelineTheme = {
     heading: {
         color: 'darkred',
         level: {
+            1: {
+                large: {
+                    size: "85px",
+                    height: "90px",
+                    // maxWidth: "70vw"
+                }
+            },
             3: {
                 medium: {
-                    size: "28px",
-                    height: "30px",
+                    size: "26px",
+                    height: "28px",
                     maxWidth: "70vw"
                 }
             }
@@ -256,9 +259,11 @@ function Timeline () {
                      direction='column'
                      justify='evenly' 
                      align='end'
+                     animation={[
+                        {type: 'fadeIn', delay: 750, duration: 500},
+                        {type: 'slideUp', delay: 750, duration: 700, size: 'medium'}]}
                      className='start'>
-                    <Fade direction='up'cascade damping={0.1}>
-                        <Heading level='1' size='xlarge' 
+                        <Heading level='1' size='large' 
                                  margin={{bottom: '0', top: '0'}} 
                                  textAlign='end'>
                                 Has the Computer Changed Architecture? 
@@ -274,9 +279,7 @@ function Timeline () {
                             as we use them as architects, how much we actually 
                             know about our tools? How did they change the way we 
                             design or even think?
-                        </Heading> 
-                    </Fade>
-                    
+                        </Heading>                     
                 </Box>
 
                 <Box className='timeline-software'>
