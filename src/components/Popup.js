@@ -3,7 +3,7 @@ import { Box, Button, Carousel, Grommet, Heading } from 'grommet';
 import { Close } from 'grommet-icons';
 import './Popup.css';
 
-
+//Custom grommet theme for popups
 const popupTheme = {
     global: {
         colors : {

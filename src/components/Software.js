@@ -1,51 +1,10 @@
 import { Box } from 'grommet';
-import React, { Component, useRef } from 'react';
+import React, { Component } from 'react';
 import { Parallax } from 'react-scroll-parallax';
-import {
-    motion,
-    useScroll,
-    useSpring,
-    useTransform,
-    MotionValue
-  } from "framer-motion";
+
 
 
 import "./Software.css";
-
-// const Software = (props) => {
-//     function useParallax(value: MotionValue<number>, distance) {
-//         return useTransform(value, [0, 1], [-distance, distance]);
-//     }
-
-//     return (
-//         <Box className='software-container' 
-//                  pad={{horizontal: 'medium'}}
-//                  align='end'
-                 
-//             >
-//                 <img className='svgbg' 
-//                      src={props.svg}
-//                      alt ='an svg background with orange undulating lines'/>
-//                 <img 
-//                     className='software-img' 
-//                     src={props.img}
-//                     alt={props.altTxt}
-//                     onClick={() => this.props.openPopup(props.softwareIndex)}
-//                     onMouseEnter={props.mouseEnter} 
-//                     onMouseLeave={props.mouseLeave}
-//                     />
-                 
-//                 <Parallax translateY={['400', '-50']}>
-//                     <p>{props.description}</p>
-//                 </Parallax>
-                
-//                 <Parallax translateY={['400', '-200']}>
-//                     <h1>{props.name}</h1>
-//                 </Parallax>
-                
-//             </Box>
-//     )
-// }
 
 class Software extends Component {
     render(){

@@ -5,7 +5,7 @@ import { Grommet } from 'grommet';
 
 import "./CaseStudy.css";
 
-
+//Custom cursor on "interface"
 const variant = {
     visible: { 
         opacity: 1, 
@@ -18,6 +18,7 @@ const variant = {
     }
 }
 
+//Custom grommet theme
 const caseStudyTheme = {
     heading: {
         level: {

@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route}
-    from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 import Homepage from './views/Homepage';
@@ -12,7 +11,7 @@ function App() {
   return (
     <ParallaxProvider>
         <Routes>
-            <Route path='/' element={<Homepage />}/>
+            <Route exact path='/' element={<Homepage />}/>
             <Route path='/home' element={<Homepage />}/>
             <Route path='/projects' element={<ProjectList/>}/>
             <Route path='/timeline' element={<Timeline/>}/>
