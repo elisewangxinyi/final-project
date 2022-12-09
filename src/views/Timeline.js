@@ -290,7 +290,7 @@ function Timeline () {
                                     name = {software.name}
                                     svg = {software.bgSvg}
                                     img = {software.image}
-                                    alt = {software.altTxt}
+                                    altTxt = {software.altTxt}
                                     description = {software.description}
                                     mouseEnter = {textEnter}
                                     mouseLeave = {textLeave}
