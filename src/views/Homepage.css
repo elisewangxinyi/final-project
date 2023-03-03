@@ -10,10 +10,10 @@ body::-webkit-scrollbar{
 @media (prefers-reduced-motion: no-preference) {
     .btn-about {
       animation: App-logo-spin infinite 10s linear;
-      width: 20vmin;
-      position: absolute;
+      width: 25vmin;
+      /* position: absolute;
       top: 35%;
-      right: 15%;
+      right: 15%; */
       transition: all ease 0.7s;
 
     }
@@ -26,7 +26,6 @@ body::-webkit-scrollbar{
 
 #btn-go {
     color: #b00e2f;
-    width: 200px;
     transition: all ease 0.7s;
 }
 

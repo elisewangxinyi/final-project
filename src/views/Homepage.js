@@ -75,7 +75,9 @@ function Homepage () {
             backgroundColor: "#FFBCBC",
             transition: {
                 type: "spring",
-                mass: 0.5
+                // stiffness: 150,
+                // damping: 10
+                // mass: 0.5
             }
             
         }
@@ -90,66 +92,82 @@ function Homepage () {
                 variants={variants}
                 animate="default">
             </motion.div>
-            <Box background='beige' 
-                 align='center' 
-                 justify='center'
-                 height='100vh'>
-                <Box width='100%' margin={{top: '10vh', bottom: '10vh'}}>
-                    <Box direction='row'
-                        background='beige'
-                        justify='center'
-                        width='100%'
-                        margin={{bottom: '15px'}}
-                        animation=
-                        {{type: 'slideUp', delay: 300, duration: 500, size: 'large'}}
-                        >
-                        <Heading level='1'
-                                 textAlign='center'
-                                 size='xlarge'
-                                 margin='0'>ARCHITECTURE 
+            <Box 
+            background='beige'
+            pad="large"
+            justify='between'
+            height='100vh'
+            className='where'
+            >
+                <Box 
+                className='title' 
+                >
+                    <Box 
+                    background='beige'
+                    width='100%'
+                    animation=
+                    {{type: 'slideUp', delay: 300, duration: 500, size: 'large'}}
+                    >
+                        <Heading 
+                            level='1'
+                            size='xlarge'
+                            margin='0'>
+                                ARCHITECTURE 
                         </Heading> 
                     </Box>
 
-                    <Box direction='row' justify='center'
-                        background='beige'
-                        width='100%'
-                        margin={{bottom: '20px'}}
-                        animation=
-                        {
-                        {type: 'slideDown', delay: 300, duration: 500, size: 'large'}}
-                        >
-                        <Heading level='1'
-                                textAlign='center'
+                    <Box 
+                    direction='row'
+                    gap='large'
+                    align='center'
+                    background='beige'
+                    width='100%'
+                    animation=
+                    {{type: 'slideDown', delay: 300, duration: 500, size: 'large'}}
+                    >
+                        <Heading 
+                                level='1'
                                 size='xlarge'
-                                margin='0'>MACHINE
+                                margin='0'>
+                                    MACHINE
                         </Heading> 
+                        <Box className='about'>
+                            <Button onClick={() => setPopup(true)} >
+                                <img 
+                                    className='btn-about'
+                                    src={process.env.PUBLIC_URL + "/assets/spin-btn-about.png"}
+                                    alt='a spinning button that opens the About pop up of the exhibition'
+                                />
+                            </Button>
+                        </Box>
                     </Box>
-                </Box>
-                
-                <Box >
-                    <Button onClick={() => setPopup(true)}>
-                    <img src={process.env.PUBLIC_URL + "/assets/spin-btn-about.png"}
-                         width="500px" 
-                         alt='a spinning button that opens the About pop up of the exhibition'
-                        className='btn-about'/>
-                    </Button>
-                    
                 </Box>
 
                 <Box className='get-started' 
-                     margin={{top:'3%', bottom: '6%'}} 
-                     align='center'>
-                    <Heading level='3' 
-                             textAlign='center'
-                             weight='normal'
-                             size='medium'>
-                        HOW MUCH DO YOU KNOW ABOUT YOUR TOOLS?
-                    </Heading>
-                    <Link to="/timeline">
-                        <Button id='btn-go'
-                                size='large'
-                                label="LET'S GO"/>
-                    </Link>
+                     margin={{bottom: '3vh'}} 
+                     align='center'
+                     gap='medium'
+                     pad={{right: "50px"}}>
+                        <Box fill="horizontal" align='end'>
+                            <Heading 
+                                level='3' 
+                                weight='normal'
+                                margin="none">
+                                    How much do you know about your tools?
+                            </Heading>
+                        </Box>
+
+                        <Box fill="horizontal" align='end'>
+                            <Link to="/timeline">
+                                <Button 
+                                    id='btn-go'
+                                    size='large'
+                                    label="LET'S GO"
+                                />
+                            </Link>
+                        </Box>
+
+
                 </Box>
 
 
