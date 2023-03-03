@@ -301,10 +301,14 @@ function Timeline () {
 
                 <motion.div
                     style={{rotate: angle}}
-                    className="spin-timeline">
-                    <img 
-                        src={process.env.PUBLIC_URL + "/assets/timeline-wheel2.svg"}
-                        alt = 'a timeline of all the software in a spinning wheel format'/>
+                    className="spin-timeline"
+                    >
+                        <Box fill >
+                            <img 
+                            src={process.env.PUBLIC_URL + "/assets/timewheel.png"}
+                            alt = 'a timeline of all the software in a spinning wheel format'/>
+                        </Box>
+                    
                 </motion.div> 
                 
                 <animated.div style={props}>

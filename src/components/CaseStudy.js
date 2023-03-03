@@ -5,7 +5,7 @@ import { Grommet } from 'grommet';
 
 import "./CaseStudy.css";
 
-//Custom cursor on "interface"
+// For scroll to appear animation
 const variant = {
     visible: { 
         opacity: 1, 
@@ -40,6 +40,7 @@ const CaseStudy = (props) => {
 
     useEffect(() => {
         if (isInView) {
+            console.log("im  in view")
             control.start('visible')
         }
     })

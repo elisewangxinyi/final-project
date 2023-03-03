@@ -128,7 +128,8 @@ function Homepage () {
                 
                 <Box >
                     <Button onClick={() => setPopup(true)}>
-                    <img src={process.env.PUBLIC_URL + "/assets/spin-btn-about.svg"}
+                    <img src={process.env.PUBLIC_URL + "/assets/spin-btn-about.png"}
+                         width="500px" 
                          alt='a spinning button that opens the About pop up of the exhibition'
                         className='btn-about'/>
                     </Button>
